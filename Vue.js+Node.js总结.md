@@ -23,3 +23,16 @@
 * Windows cmd：SET DEBUG=myapp:* & npm start
 * vscode终端：$env:DEBUG='myapp:* '; npm start
 ### next()：把控制权交给下一个处理程序(handler)
+### response的方法
+* res.download()：下载一个文件
+* res.json()：返回一个JSON串
+* res.render()；渲染一个模板视图
+* res.send()：以各种形式返回一个任意的数据类型
+#### 开放public目录下的图片、CSS文件和JavaScript文件：
+```node.js 
+app.use(express.static('public'))
+```
+#### 路径采用path.join(__dirname, 'public')的形式，是为了保证目录的可用性，如果不采用这种路径方式，就必须采用相对路径的形式
+#### Redis采用常驻内存的方式，以内存作为存储数据的位置。也就是说，数据的读写不会有存储设备的I/O过程，这是其处理速度极快的原因
+#### Redis不需要指定数据的格式，只要使用set()方法将键值对存入数据库，使用get()方法通过键获取对应的值即可
+#### 关系数据库和非关系数据库的区别：关系数据库是由行和列组成；非关系数据库是由键值对组成，不需要手动建数据库和表
